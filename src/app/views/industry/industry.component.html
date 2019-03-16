@@ -1,0 +1,72 @@
+<div class="animated fadeIn">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-edit"></i>Add Industry
+          <div class="card-header-actions">
+            <button mat-icon-button mat-dialog-close class="card-header-action btn btn-link btn-close"><i class="icon-close"></i></button>
+          </div>
+        </div>
+        <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="card-body">
+          <!-- <form class="form-horizontal" > -->
+            <form #form="ngForm" (submit)="onsubmit(form)" autocomplete="off">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label"> Select State</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <select matInput class="form-control" name="state" placeholder=" Select State" [(ngModel)]="state">
+                          <option  *ngFor="let s of states" [value]="s.code">
+                            {{ s.name }}
+                          </option>
+                        </select>
+                   </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-form-label"> City</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <input matInput type="text" class="form-control" name="city" placeholder="City Name" [(ngModel)]="city" required>
+                    <!-- <div class="validation-error" *ngIf = "city.invalid && city.touched">This field is required</div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label">Industry Name</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <input matInput type="text" class="form-control" name="industry_name" placeholder="Industry Name" [(ngModel)]="industry_name" required>
+                      <!-- <div class="validation-error" *ngIf = "industry_name.invalid && industry_name.touched">This field is required</div> -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group"> </div>
+
+            <div class="form-actions pull-right">
+              <!-- <button type="submit" class="btn btn-primary"  (click)="addemp()">
+                {{ isEditLocationInfoAction ? 'Update Industry' :'Add Industry' }}
+              </button> -->
+              <button type="submit" class="btn btn-primary" [disabled]="!form.valid"> Add Industry</button>
+              &nbsp;&nbsp;
+              <!-- <button class="btn btn-secondary" type="button">Cancel</button>  -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+
+
+</div>
+
+

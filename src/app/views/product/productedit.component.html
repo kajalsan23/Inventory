@@ -1,0 +1,80 @@
+<div class="animated fadeIn">
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <!-- <i class="fa fa-edit"></i> Add Product -->
+          <div class="card-header-actions">
+            <button mat-icon-button mat-dialog-close class="card-header-action btn btn-link btn-close"><i class="icon-close"></i></button>
+          </div>
+        </div>
+        <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="card-body">
+          <form #form="ngForm" (submit)="addproduct(form)">
+              <div class="col-md-6">
+                  <!-- <label class="col-form-label">id</label> -->
+                  <div class="controls">
+                    <div class="input-group">
+                      <input type="hidden" class="form-control" name="id" #id="ngModel" [(ngModel)]="pserv.formData.id" required>
+                    </div>
+                  </div>
+                </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label">Select Industry</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <select class="form-control" name="selectindustry" #selectindustry="ngModel" [(ngModel)]="pserv.formData.selectindustry">
+                      <option *ngFor="let i of industry" [value]="i.id">
+                        {{ i.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label">Product Name</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <input matInput type="text" class="form-control" name="name" placeholder="Product Name" [(ngModel)]="pserv.formData.name"
+                      required>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-md-6">
+                <label class="col-form-label">Product Image</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <input type="file" class="form-control" name="image" placeholder="Image" (change)="selectFile($event)">
+                 </div>
+                </div>
+              </div> -->
+
+              <div class="col-md-6">
+                <label class=" col-form-label">Product Image</label>
+                <div class="controls">
+                  <div class="input-group">
+                  <input type="file" class="form-control" name="image_url" placeholder="Image" (change)="selectFile($event)">
+                 </div>
+                 </div>
+              </div>
+            </div>
+            <div class="form-group"></div>
+
+            <div class="form-actions pull-right">
+              <button type="submit" class="btn btn-primary" [disabled]="!form.valid" mat-dialog-close> Update Product
+               </button>
+              &nbsp;&nbsp;
+             <button class="btn btn-secondary" mat-dialog-close type="button">Cancel</button> 
+           
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>

@@ -1,0 +1,154 @@
+<!-- <div class="animated fadeIn">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-edit"></i>Add Stock
+          <div class="card-header-actions">
+            <button mat-icon-button mat-dialog-close class="card-header-action btn btn-link btn-close"><i class="icon-close"></i></button>
+          </div>
+        </div>
+        <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="card-body">
+
+          <form #form="ngForm" (submit)="Addstock(form)">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label">Select Industry</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <select class="form-control" name="selectindustry" [(ngModel)]="stockserv.formData.selectindustry">
+                      <option *ngFor="let i of industry" [value]="i.id">
+                        {{ i.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-form-label">Select Product</label>
+                <select class="form-control" placeholder=" Select product" name="selectproduct" [(ngModel)]="stockserv.formData.selectproduct">
+                  <option *ngFor="let p of product" [value]="p.id">
+                    {{ p.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label">Select Product Size</label>
+                <div class="controls">
+                  <div class="input-group">
+                    <select id="select2" name="size" class="form-control form-control-md" [(ngModel)]="stockserv.formData.size" >
+                      <option value="0">Please select</option>
+                      <option value="XS">XS (36)</option>
+                      <option value="S"> S (38)</option>
+                      <option value="M"> M (40)</option>
+                      <option value="L"> L (42)</option>
+                      <option value="XL"> XL (44)</option>
+                      <option value="XXL"> XXL (46)</option>
+                      <option value="XXXL"> XXXL (48)</option>
+                      <option value="XXXXL"> XXXXL (50)</option>
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-form-label"> Product Count</label>
+                <input matInput type="text" class="form-control" name="added" placeholder="Product Count" [(ngModel)]="stockserv.formData.added"
+                  required>
+              </div>
+            </div>
+
+            <div class="form-group"> </div>
+            <div class="form-actions pull-right">
+              <button type="submit" class="btn btn-primary" [disabled]="!form.valid" >Add Stock</button>
+              &nbsp;
+              <button class="btn btn-secondary" type="button">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/.col--
+  </div>
+  <!--/.row--
+
+
+</div> -->
+
+
+<div class="animated fadeIn">
+  <!--/.row-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-edit"></i>Add Stock
+          <div class="card-header-actions">
+            <button type="button" class="card-header-action btn btn-link btn-close"><i class="icon-close"></i></button>
+          </div>
+        </div>
+        <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="card-body">
+        <form #form="ngForm" (submit)="Addstock(form)">
+          <div class="row">
+              <div class="col-md-6">
+                  <label class="col-md-3 col-form-label">Select Industry</label>
+                  <select class="form-control" placeholder=" Select Industry" name="industry_id" [(ngModel)]="selectindustry">
+                    <option  *ngFor="let i of industry" [value]="i.id">
+                        {{ i.name }}
+                    </option>
+                </select>
+      
+                 </div>
+                 <div class="col-md-6">
+                    <label class="col-md-3 col-form-label">Select Product</label>
+                    <select class="form-control" placeholder=" Select product" name="product_id" [(ngModel)]="selectproduct">
+                      <option  *ngFor="let p of product" [value]="p.id">
+                          {{ p.name }}
+                      </option>
+                  </select>
+           </div>
+          </div> 
+          <div class="row">
+              <div class="col-md-6">
+                  <label class="col-form-label">Select Product Size</label>
+                  <div class="controls">
+                    <div class="input-group">
+                      <select name="size" class="form-control" [(ngModel)]="size" >
+                        <option value="0">Please select</option>
+                        <option value="XS">XS (36)</option>
+                        <option value="S"> S (38)</option>
+                        <option value="M"> M (40)</option>
+                        <option value="L"> L (42)</option>
+                        <option value="XL"> XL (44)</option>
+                        <option value="XXL"> XXL (46)</option>
+                        <option value="XXXL"> XXXL (48)</option>
+                        <option value="XXXXL"> XXXXL (50)</option>
+  
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-md-6">
+                  <label class="col-md-3 col-form-label"> Product Count</label>
+                <input matInput type="text" class="form-control" name="added"  placeholder="Product Count" [(ngModel)]="added" required>
+             </div>
+          </div>
+
+    <div class="form-group">
+           
+          </div>
+          <div class="form-actions pull-right">
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Add Stock</button>
+            <!-- &nbsp; -->
+            <!-- <button class="btn btn-secondary" type="button" >Cancel</button> -->
+          </div>
+        </form>
+        <!-- </div> -->
+      </div>
+      </div>
+    </div> <!--/.col-->
+  </div><!--/.row-->
+</div>

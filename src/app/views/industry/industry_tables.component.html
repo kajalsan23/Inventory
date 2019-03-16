@@ -1,0 +1,83 @@
+<div class="animated fadeIn">
+ 
+  <!--/.row-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Industry Table
+        </div>
+        <div class="card-body">
+   <div class="table-responsive">
+          <table class="table table-hover" style="background-color:#2f353a">
+            <tr style="color:white">
+              <td style="color:white">No.</td>
+              <td style="color:white">Industry Name</td>
+              <td>City</td>
+              <td>Actions</td>
+            </tr>
+            <tr *ngFor="let i of service.list" style="color:white">
+              <td style="color:white" (click)="populatedform(i)">{{i.id}}</td>
+              <td style="color:white" (click)="populatedform(i)">{{i.name}}</td>
+              <td (click)="populatedform(i)">{{i.city}}</td>
+              <!-- <td (click)="populatedform(i)">{{i.state}}</td> -->
+              <td> <i class="fa fa-pencil fa-lg mt-4" (click)="openDialog(i.id)"></i> &nbsp;&nbsp;
+                <i class="fa fa-trash fa-lg mt-4" (click)="deleteIndustry(i.id)"></i></td>
+              <!-- <td></td> -->
+            </tr>
+          </table>
+        </div>
+        
+            <!-- <div class="">
+                <mat-table [dataSource]="service.list">
+            
+                  <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                    <mat-cell *matCellDef="let user "> {{user.id}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef>Name </mat-header-cell>
+                    <mat-cell *matCellDef="let user "> {{user.name}} </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="city">
+                    <mat-header-cell *matHeaderCellDef>city </mat-header-cell>
+                    <mat-cell *matCellDef="let user "> {{user.city}} </mat-cell>
+                  </ng-container>
+                 <ng-container matColumnDef="state">
+                    <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+                    <mat-cell *matCellDef="let user"> {{user.state}} </mat-cell>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="actions">
+                      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+                      <mat-cell *matCellDef="let row">
+                          <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                              <i class="fa fa-pencil fa-lg mt-4" (click)="openDialog(row.id)"></i>
+                          </div>
+                              
+                          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                              <i class="fa fa-trash fa-lg mt-4" (click)="deleteIndustry(row.id)"></i> </div>
+                       </mat-cell>
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+           </mat-table>
+          
+           <mat-paginator [pageSize]="5" [pageSizeOptions]="[1,2,3,4,5, 10, 25, 100]">
+          </mat-paginator>
+                
+              </div> -->
+
+
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>
+
+<div class="loading-div" *ngIf="loading">
+    <mat-spinner style="margin-left: 40%"></mat-spinner>
+</div>

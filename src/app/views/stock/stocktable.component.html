@@ -1,0 +1,92 @@
+<div class="animated fadeIn">
+ 
+    <!--/.row-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Combined All Table
+          </div>
+          <div class="card-body">
+          
+              <div class="">
+                  <mat-table [dataSource]="dataSource">
+              
+                    <!-- <ng-container matColumnDef="id">
+                      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+                    </ng-container>
+                 -->
+                    <ng-container matColumnDef="industry">
+                      <mat-header-cell *matHeaderCellDef>Industry Name </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.industry}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="product">
+                      <mat-header-cell *matHeaderCellDef>Product Name </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.product}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="XS">
+                      <mat-header-cell *matHeaderCellDef> XS </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.xs}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="S">
+                      <mat-header-cell *matHeaderCellDef> Small </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.s}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="M">
+                      <mat-header-cell *matHeaderCellDef> Medium </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.m}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="L">
+                      <mat-header-cell *matHeaderCellDef>Large </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.l}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="XL">
+                      <mat-header-cell *matHeaderCellDef>XL </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.xl}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="XXL">
+                      <mat-header-cell *matHeaderCellDef>XXL </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.xxl}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="XXXL">
+                      <mat-header-cell *matHeaderCellDef> XXXL </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.xxxl}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="XXXXL">
+                      <mat-header-cell *matHeaderCellDef>XXXXL </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.xxxxl}} </mat-cell>
+                    </ng-container>
+
+                   <ng-container matColumnDef="total">
+                      <mat-header-cell *matHeaderCellDef> Product Count </mat-header-cell>
+                      <mat-cell *matCellDef="let user"> {{user.total}} </mat-cell>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="actions">
+                        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+                        <mat-cell *matCellDef="let row">
+                           
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                                <i class="fa fa-pencil fa-lg mt-4" (click)="edit()"></i> </div>
+                           
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <i class="fa fa-trash fa-lg mt-4" (click)="delete()"></i> </div>
+                                <!-- <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                    <button type="button" class="btn btn-primary" (click)="update()">Update Stock</button>
+                                  </div> -->
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                
+                  </mat-table>
+                </div>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>
+  

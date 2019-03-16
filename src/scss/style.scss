@@ -1,0 +1,22 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+input.ng-dirty.ng.invalid{
+    border-color: red;
+}
+
+div.validation-error{
+    width: 100%;
+   // margin-top: 25rem;
+   // fonrt-size:80%;
+    color: red;
+
+}
